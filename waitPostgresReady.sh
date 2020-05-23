@@ -1,9 +1,8 @@
  #!/bin/bash 
-         COUNTER=0
-         while [  $COUNTER -lt 10 ]; do
+         COUNTER = 0
+         while [$COUNTER -lt 2]; do
              echo The counter is $COUNTER
-             let COUNTER=COUNTER+1 
-		docker logs postgres|grep -c 'database system is ready to accept connections'
+             COUNTER = $(docker logs postgres 2>&1|grep -c 'database system is ready to accept connections')
 		echo $?
          done
          
