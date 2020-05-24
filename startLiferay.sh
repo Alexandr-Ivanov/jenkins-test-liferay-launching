@@ -1,0 +1,1 @@
+docker run -dit -v ~/liferay/logs:/opt/liferay/logs -v ~/liferay/tomcat/logs:/opt/liferay/tomcat-7.0.62/logs -v ~/liferay/deploy:/opt/liferay/deploy -v ~/liferay/keys:/var/opt/cprocsp/keys/root --name liferay --publish 8000:8080 liferay:1.0

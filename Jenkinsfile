@@ -7,8 +7,13 @@ pipeline {
                 		timeout(time: 1, unit: 'HOURS') 
             		}
 			steps {
-				echo 'Hello, PostgreSQL'
 				sh './runPostgresReady.sh'
+			}
+		}
+		stage('Run Liferay') {
+			agent any
+			steps {
+				sh './startLiferay.sh'
 			}
 		}
 	}
